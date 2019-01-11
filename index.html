@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TipCalculator</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="mainBox">
+            <div class="boxTitle"><p>TipCalculator</p>
+                <div class="bill">
+                    <label for="bill">Bill:</label> 
+                    <input type="number" id="bill">
+                    
+                </div>
+                <div class="quality">
+                    <label for="quality">Quality of service: </label>
+                    <select name="quality" id="quality">
+                        <option value="excellent">excellent</option>
+                        <option value="ok">ok</option>
+                        <option value="extremelyBad">extremely bad</option>
+                            
+                    </select>
+                    
+            </div>
+                <div class="people">
+                    <label for="people">Number of people:</label>
+                        <input type="text" id="people"> 
+
+                    
+
+                </div>
+                
+                <button class="check">check</button>
+            </div>
+            
+            <div class="boxContent">
+                <div class="billSummary"> Bill: <p></p> </div>
+                <div class="billPerPerson">Bill per person: <p></p></div>
+                <div class="qualitySummary">Quality rating: <p></p></div>
+                <div class="tip">Tip: <p></p> </div>
+                <div class="tipPerPerson">Tip per person: <p></p></div>
+
+
+            </div>
+            
+
+        </div>
+
+
+    </div>
+
+
+    
+
+
+<script src="js/script.js"></script>    
+</body>
+</html>
