@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    height: 100vh;
 }
 
 .mainBox {
@@ -24,11 +25,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    height: 20%;
+    height: 40%;
     border: 1px solid black;
 }
+.boxTitle p {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
 .boxTitle div {
-    margin: 10px 0;
+    margin: 30px 15px;
 }
 
 label {

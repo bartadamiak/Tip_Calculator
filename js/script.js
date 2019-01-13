@@ -17,7 +17,7 @@ function CalculateTip() {
     if (qualityVal === "ok") {
         qualitySum.innerText = "15%"
     };
-    if (qualityVal === "extremely bad") {
+    if (qualityVal === "extremelyBad") {
         qualitySum.innerText = "0%"
     }
 
@@ -59,7 +59,7 @@ function CalculateTip() {
 };
 
 checkButton.addEventListener('click', function() {
-    if (document.querySelector('#bill').value.length > 0) {
+    if (document.querySelector('#bill').value.length > 0 && document.querySelector('#people').value.length > 0) {
         CalculateTip();
     }
 })
