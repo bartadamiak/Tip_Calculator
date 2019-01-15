@@ -42,6 +42,7 @@ body {
     -webkit-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
     -moz-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
     box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
+    padding-top: 20px;
 }
 .boxTitle p {
     display: block;
@@ -71,12 +72,22 @@ label {
     z-index: 100000;
     cursor: pointer;
     margin: 0px auto;
+    border: none;
 
+}
+.boxTitle button:hover {
+    opacity: 0.5;
+}
+.boxTitle div {
+    display: flex;
+    justify-content: flex-start;
 }
 
 
 
 /* //////////////////////////////////////// Summary Box \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+
 
 .boxContent {
     font-size: 21px;
@@ -92,31 +103,55 @@ label {
     -webkit-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
     -moz-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
     box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
+    
 }
-.boxContent p {
+.boxContent .firstP {
     display: inline-block;
+    text-align: left;
+    width: 150px;
+}
+
+.boxContent .secondP {
+    display: inline-block;
+    text-align: center;
+    width: 80px;
 }
 
 .boxContent div {
     margin: 10px 20px;
     display: inline-block;
+    
+    
 }
 
 .boxContent div div {
     margin-left: 10px;
     margin-bottom: 0px;
+    width: 30px;
+    
 }
 
-.boxTitle div {
-    display: flex;
-    justify-content: flex-start;
+.billSummary {
+    padding-top: 20px;
 }
+
+
 
 /*/////////////////////////// Currency box \\\\\\\\\\\\\\\\\\\\\\ */
+.red {
+    background: #E98074;
+    
+}
+.blue {
+    background: rgb(203,233,226);
+    -webkit-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
+    -moz-box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
+    box-shadow: inset 0px 0px 30px -2px rgba(18,18,18,1);
+}
 
 .currencies {
     width: 250px;
-    height: 250px;
+    height: 310px;
     
     position: relative;
     top: 300px;
@@ -129,13 +164,20 @@ label {
 
 .currencies div {
     border-radius: 10%;
+    padding-top: 10px;
     width: 50px;
     height: 50px;
     border: 1px solid black;
-    background: rgb(203,233,226);
+    
     cursor: pointer;
 }
 .currencies div:hover {
     opacity: 0.5;
     transition: 0.3s;
 }
+
+.pln {
+    font-size: 28px;
+    font-weight: 800;
+}
+
