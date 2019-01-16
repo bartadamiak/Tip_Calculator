@@ -30,52 +30,64 @@ function CalculateTip() {
         tip = 0
     }
 
-    // Fill empty spaces in summary box
+    // Summary box
 
     
     let bill = document.querySelector('.billSummary div').innerText = Math.ceil(billVal + tip);
-    let billPerPersonSum = document.querySelector('.billPerPerson div').innerText = (bill/peopleVal).toFixed(1);
+    let billPerPersonSum = document.querySelector('.billPerPerson div').innerText = (bill/peopleVal).toFixed(2);
     
     
     
 
     let tipSum = document.querySelector('.tip div').innerText = tip;
-    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = (tipSum/peopleVal).toFixed(1);
+    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = (tipSum/peopleVal).toFixed(2);
    
-    
+
 
 
     
     
 };
 
+
 function Currencies(tab) {
     
     for (let i = 0; i < tab.length; i++) {
         tab[i].addEventListener('click', function() {
+
+            let red = document.querySelectorAll('.red');
+
+            // if (this.classList = "dollar") {
+            //     console.log('dollar')
+            // }
            
-            if (document.querySelectorAll('.red').length < 1) {
-            this.classList.toggle('blue');
-            this.classList.toggle('red')
+            if (red.length = 0) {
+                
+                this.classList.toggle('red');
+                this.classList.toggle('blue');
+                
+                
+            
             }
-            document.querySelector('.red').addEventListener('click', function() {
+            if (red.length = 1) {
                 this.classList.toggle('blue');
                 this.classList.toggle('red');
+                red[0].classList.toggle('red');
+                red[0].classList.toggle('blue');
                 
-            });
+                
+            }
             
-            
-        });
-    }
 
-    
+                
+        });
+    };
+        
 }
 
 
 
 Currencies(currencySign);
-
-
 
 checkButton.addEventListener('click', function() {
     if (document.querySelector('#bill').value.length > 0 && document.querySelector('#people').value.length > 0) {
