@@ -3,9 +3,15 @@ const currencySign = document.querySelectorAll('.currencies div');
 
 function CalculateTip() {
     
+    // Inputs box
+
     let billVal = parseFloat(document.querySelector('#bill').value);
     let peopleVal = parseFloat(document.querySelector('#people').value);
     let qualityVal = document.querySelector('#quality').value;
+
+    // Summary box - Tip counter
+
+
     let qualitySum = document.querySelector('.qualitySummary div');
 
     let tip = 0;
@@ -24,14 +30,19 @@ function CalculateTip() {
         tip = 0
     }
 
+    // Fill empty spaces in summary box
+
     
     let bill = document.querySelector('.billSummary div').innerText = Math.ceil(billVal + tip);
+    let billPerPersonSum = document.querySelector('.billPerPerson div').innerText = (bill/peopleVal).toFixed(1);
+    
+    
     
 
     let tipSum = document.querySelector('.tip div').innerText = tip;
-    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = Math.ceil(tipSum/peopleVal);
-    let billPerPerson = Math.ceil(bill/peopleVal);
-    let billPerPersonSum = document.querySelector('.billPerPerson div').innerText = billPerPerson;
+    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = (tipSum/peopleVal).toFixed(1);
+   
+    
 
 
     
