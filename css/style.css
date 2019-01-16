@@ -181,3 +181,14 @@ label {
     font-weight: 800;
 }
 
+/*/////////////////// Media \\\\\\\\\\\\\\\\\\\\\\ */
+
+@media (max-width: 400px) {
+    .main {
+        justify-content: flex-start;
+        
+    }
+    .currencies {
+        display: none;
+    }
+}
