@@ -1,15 +1,8 @@
 const checkButton = document.querySelector('.check');
 const currencySign = document.querySelectorAll('.currencies div');
 
-
-
-
-
-
-
 function CalculateTip() {
     
-
     let billVal = parseFloat(document.querySelector('#bill').value);
     let peopleVal = parseFloat(document.querySelector('#people').value);
     let qualityVal = document.querySelector('#quality').value;
@@ -32,11 +25,11 @@ function CalculateTip() {
     }
 
     
-    let bill = document.querySelector('.billSummary div').innerText = billVal + tip;
+    let bill = document.querySelector('.billSummary div').innerText = Math.ceil(billVal + tip);
     
 
     let tipSum = document.querySelector('.tip div').innerText = tip;
-    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = Math.ceil(tip/peopleVal);
+    let tipPerPerson = document.querySelector('.tipPerPerson div').innerText = Math.ceil(tipSum/peopleVal);
     let billPerPerson = Math.ceil(bill/peopleVal);
     let billPerPersonSum = document.querySelector('.billPerPerson div').innerText = billPerPerson;
 
@@ -44,9 +37,6 @@ function CalculateTip() {
     
     
 };
-
-
-
 
 function Currencies(tab) {
     
