@@ -259,7 +259,7 @@ $( function() {
             let eurPound = data.rates.EUR;
             eurPound = (parseFloat(eurPound)*billSum).toFixed(2);
 
-            let eurConvert = $('.eurConverter p').text(eurPound + " " + "EUR");
+            let eurConvert = $('.euroConverter p').text(eurPound + " " + "EUR")
 
              // Dollar
             let usdPound = data.rates.USD;
