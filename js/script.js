@@ -57,9 +57,16 @@ function Currencies(tab) {
 
             let red = document.querySelectorAll('.red');
 
-            // if (this.classList = "dollar") {
-            //     console.log('dollar')
-            // }
+            let secondP = document.querySelectorAll('.secondP');
+            
+            for (let j = 0; j < secondP.length; j++) {
+                secondP[j].innerText = this.innerText;
+
+            }
+
+
+            
+            
            
             if (red.length = 0) {
                 
@@ -70,6 +77,7 @@ function Currencies(tab) {
             
             }
             if (red.length = 1) {
+                
                 this.classList.toggle('blue');
                 this.classList.toggle('red');
                 red[0].classList.toggle('red');
