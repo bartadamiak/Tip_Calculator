@@ -64,18 +64,12 @@ function Currencies(tab) {
 
             }
 
-
-            
-            
-           
             if (red.length = 0) {
                 
                 this.classList.toggle('red');
                 this.classList.toggle('blue');
-                
-                
-            
             }
+
             if (red.length = 1) {
                 
                 this.classList.toggle('blue');
@@ -92,6 +86,60 @@ function Currencies(tab) {
     };
         
 }
+
+$( function() {
+    let currencyPLN = 'https://api.exchangeratesapi.io/latest?base=PLN';
+    let currencyUSD = 'https://api.exchangeratesapi.io/latest?base=USD';
+    let currencyRUB = 'https://api.exchangeratesapi.io/latest?base=RUB';
+    let currencyEUR = 'https://api.exchangeratesapi.io/latest?base=EUR';
+    let currencyGBP = 'https://api.exchangeratesapi.io/latest?base=GBP';
+
+    
+
+
+
+    $('.dollar').on('click', function() {
+        $.ajax(currencyUSD).done(function(data) {
+
+            let billSum = $('.billSummary div').text();
+            billSum = parseFloat(billSum);
+
+            // Pounds
+            let gbpDollar = data.rates.GBP;
+            gbpDollar = (parseFloat(gbpDollar)*billSum).toFixed(2);
+
+            let gbpConvert = $(`<p> ${gbpDollar} GBP </p>`);
+            $('.poundConverter').append(gbpConvert);
+
+            // Zloty
+            let plnDollar = data.rates.PLN;
+            plnDollar = (parseFloat(plnDollar)*billSum).toFixed(2);
+
+            let plnConvert = $(`<p> ${plnDollar} ZŁ </p>`);
+            $('.plnConverter').append(plnConvert);
+
+            // Euro
+            let eurDollar = data.rates.EUR;
+            eurDollar = (parseFloat(eurDollar)*billSum).toFixed(2);
+
+            let eurConvert = $(`<p> ${eurDollar} EUR </p>`);
+            $('.euroConverter').append(eurConvert);
+
+            // Ruble
+            let rubDollar = data.rates.RUB;
+            rubDollar = (parseFloat(rubDollar)*billSum).toFixed(2);
+
+            let rubConvert = $(`<p> ${rubDollar} RUB </p>`);
+            $('.rubleConverter').append(rubConvert);
+
+
+    })
+
+
+    
+    
+});
+
 
 
 

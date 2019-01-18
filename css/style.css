@@ -150,7 +150,7 @@ label {
 }
 
 .currencies {
-    width: 250px;
+    width: 70px;
     height: 310px;
     
     position: relative;
@@ -179,6 +179,27 @@ label {
 .pln {
     font-size: 28px;
     font-weight: 800;
+}
+
+.currenciesConverter {
+    width: 400px;
+    height: 310px;
+    position: relative;
+    top: 300px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.currenciesConverter div {
+    border-radius: 10%;
+    padding-top: 10px;
+    width: 390px;
+    height: 50px;
+    border: 1px solid black;
+
 }
 
 /*/////////////////// Media \\\\\\\\\\\\\\\\\\\\\\ */
