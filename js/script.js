@@ -94,50 +94,201 @@ $( function() {
     let currencyEUR = 'https://api.exchangeratesapi.io/latest?base=EUR';
     let currencyGBP = 'https://api.exchangeratesapi.io/latest?base=GBP';
 
-    
-
-
-
     $('.dollar').on('click', function() {
-        $.ajax(currencyUSD).done(function(data) {
+        
+            $.ajax(currencyUSD).done(function(data) {
+
+                let billSum = $('.billSummary div').text();
+                billSum = parseFloat(billSum);
+
+                // Pounds
+                let gbpDollar = data.rates.GBP;
+                gbpDollar = (parseFloat(gbpDollar)*billSum).toFixed(2);
+
+                let gbpConvert = $('.poundConverter p').text(gbpDollar + " " + "GBP");
+
+                 // Zloty
+                let plnDollar = data.rates.PLN;
+                plnDollar = (parseFloat(plnDollar)*billSum).toFixed(2);
+
+                let plnConvert = $('.plnConverter p').text(plnDollar + " " + "ZŁ")
+
+                // Euro
+                let eurDollar = data.rates.EUR;
+                eurDollar = (parseFloat(eurDollar)*billSum).toFixed(2);
+
+                let eurConvert = $('.euroConverter p').text(eurDollar + " " + "EUR")
+
+                // Ruble
+                let rubDollar = data.rates.RUB;
+                rubDollar = (parseFloat(rubDollar)*billSum).toFixed(2);
+
+                let rubConvert = $('.rubleConverter p').text(rubDollar + " " + "RUB")
+                
+                // Cleaning 
+
+                $('.dollarConverter p').text("")
+        })
+    });
+    
+    $('.pln').on('click', function() {
+        
+        $.ajax(currencyPLN).done(function(data) {
 
             let billSum = $('.billSummary div').text();
             billSum = parseFloat(billSum);
 
             // Pounds
-            let gbpDollar = data.rates.GBP;
-            gbpDollar = (parseFloat(gbpDollar)*billSum).toFixed(2);
+            let gbpZloty = data.rates.GBP;
+            gbpZloty = (parseFloat(gbpZloty)*billSum).toFixed(2);
 
-            let gbpConvert = $(`<p> ${gbpDollar} GBP </p>`);
-            $('.poundConverter').append(gbpConvert);
+            let gbpConvert = $('.poundConverter p').text(gbpZloty + " " + "GBP");
 
-            // Zloty
-            let plnDollar = data.rates.PLN;
-            plnDollar = (parseFloat(plnDollar)*billSum).toFixed(2);
+             // Dollar
+            let usdZloty = data.rates.USD;
+            usdZloty = (parseFloat(usdZloty)*billSum).toFixed(2);
 
-            let plnConvert = $(`<p> ${plnDollar} ZŁ </p>`);
-            $('.plnConverter').append(plnConvert);
+            let usdConvert = $('.dollarConverter p').text(usdZloty + " " + "USD")
 
             // Euro
-            let eurDollar = data.rates.EUR;
-            eurDollar = (parseFloat(eurDollar)*billSum).toFixed(2);
+            let eurZloty = data.rates.EUR;
+            eurZloty = (parseFloat(eurZloty)*billSum).toFixed(2);
 
-            let eurConvert = $(`<p> ${eurDollar} EUR </p>`);
-            $('.euroConverter').append(eurConvert);
+            let eurConvert = $('.euroConverter p').text(eurZloty + " " + "EUR")
 
             // Ruble
-            let rubDollar = data.rates.RUB;
-            rubDollar = (parseFloat(rubDollar)*billSum).toFixed(2);
+            let rubZloty = data.rates.RUB;
+            rubZloty = (parseFloat(rubZloty)*billSum).toFixed(2);
 
-            let rubConvert = $(`<p> ${rubDollar} RUB </p>`);
-            $('.rubleConverter').append(rubConvert);
+            let rubConvert = $('.rubleConverter p').text(rubZloty + " " + "RUB")
+            
+            // Cleaning 
+
+            $('.plnConverter p').text("")
 
 
+        })
+    }) 
+
+    $('.ruble').on('click', function() {
+        
+        $.ajax(currencyRUB).done(function(data) {
+
+            let billSum = $('.billSummary div').text();
+            billSum = parseFloat(billSum);
+
+            // Pounds
+            let gbpRuble = data.rates.GBP;
+            gbpRuble = (parseFloat(gbpRuble)*billSum).toFixed(2);
+
+            let gbpConvert = $('.poundConverter p').text(gbpRuble + " " + "GBP");
+
+             // Dollar
+            let usdRuble = data.rates.USD;
+            usdRuble = (parseFloat(usdRuble)*billSum).toFixed(2);
+
+            let usdConvert = $('.dollarConverter p').text(usdRuble + " " + "USD")
+
+            // Euro
+            let eurRuble = data.rates.EUR;
+            eurRuble = (parseFloat(eurRuble)*billSum).toFixed(2);
+
+            let eurConvert = $('.euroConverter p').text(eurRuble + " " + "EUR")
+
+            // Zloty
+            let plnRuble = data.rates.PLN;
+            plnRuble = (parseFloat(plnRuble)*billSum).toFixed(2);
+
+            let plnConvert = $('.plnConverter p').text(plnRuble + " " + "ZŁ")
+            
+            // Cleaning 
+
+            $('.rubleConverter p').text("")
+
+
+        })
     })
 
+    $('.euro').on('click', function() {
+        
+        $.ajax(currencyEUR).done(function(data) {
 
+            let billSum = $('.billSummary div').text();
+            billSum = parseFloat(billSum);
+
+            // Pounds
+            let gbpEuro = data.rates.GBP;
+            gbpEuro = (parseFloat(gbpEuro)*billSum).toFixed(2);
+
+            let gbpConvert = $('.poundConverter p').text(gbpEuro + " " + "GBP");
+
+             // Dollar
+            let usdEuro = data.rates.USD;
+            usdEuro = (parseFloat(usdEuro)*billSum).toFixed(2);
+
+            let usdConvert = $('.dollarConverter p').text(usdEuro + " " + "USD")
+
+            // Ruble
+            let rubEuro = data.rates.RUB;
+            rubEuro = (parseFloat(rubEuro)*billSum).toFixed(2);
+
+            let rubleConvert = $('.rubleConverter p').text(rubEuro + " " + "RUB")
+
+            // Zloty
+            let plnEuro = data.rates.PLN;
+            plnEuro = (parseFloat(plnEuro)*billSum).toFixed(2);
+
+            let plnConvert = $('.plnConverter p').text(plnEuro + " " + "ZŁ")
+            
+            // Cleaning 
+
+            $('.euroConverter p').text("")
+
+
+        })
+    })
+
+    $('.pound').on('click', function() {
+        
+        $.ajax(currencyGBP).done(function(data) {
+
+            let billSum = $('.billSummary div').text();
+            billSum = parseFloat(billSum);
+
+            // Euro
+            let eurPound = data.rates.EUR;
+            eurPound = (parseFloat(eurPound)*billSum).toFixed(2);
+
+            let eurConvert = $('.eurConverter p').text(eurPound + " " + "EUR");
+
+             // Dollar
+            let usdPound = data.rates.USD;
+            usdPound = (parseFloat(usdPound)*billSum).toFixed(2);
+
+            let usdConvert = $('.dollarConverter p').text(usdPound + " " + "USD")
+
+            // Ruble
+            let rubPound = data.rates.RUB;
+            rubPound = (parseFloat(rubPound)*billSum).toFixed(2);
+
+            let rubleConvert = $('.rubleConverter p').text(rubPound + " " + "RUB")
+
+            // Zloty
+            let plnPound = data.rates.PLN;
+            plnPound = (parseFloat(plnPound)*billSum).toFixed(2);
+
+            let plnConvert = $('.plnConverter p').text(plnPound + " " + "ZŁ")
+            
+            // Cleaning 
+
+            $('.poundConverter p').text("")
+
+
+        })
+    })
     
-    
+
+
 });
 
 
