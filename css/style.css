@@ -202,14 +202,39 @@ label {
 
 }
 
-/*/////////////////// Media \\\\\\\\\\\\\\\\\\\\\\ */
+/*/////////////////// Mobile \\\\\\\\\\\\\\\\\\\\\\ */
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
+
+    
+    body {
+        height: 100vh;
+    }
+    
+
     .main {
         justify-content: flex-start;
+        background: none;
+        height: 100%;
         
     }
     .currencies {
-        display: none;
+        width: 373px;
+        height: 70px;
+        flex-direction: row;
+        justify-content: space-around;
+        left: -380px;
+        top: 630px;
+    }
+    .currencies div {
+        margin: 10px;
+    }
+    .currenciesConverter {
+        position: relative;
+        left: -765px;
+        top: 700px;
+    }
+    .currenciesConverter div {
+        width: 373px;
     }
 }
