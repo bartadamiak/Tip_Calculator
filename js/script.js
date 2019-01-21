@@ -94,7 +94,51 @@ $( function() {
     let currencyEUR = 'https://api.exchangeratesapi.io/latest?base=EUR';
     let currencyGBP = 'https://api.exchangeratesapi.io/latest?base=GBP';
 
+    $('.check').on('click', function() {
+
+        
+        
+        $.ajax(currencyPLN).done(function(data) {
+
+            
+            let billSum = $('.billSummary div').text();
+            billSum = parseFloat(billSum);
+
+            // Pounds
+            let gbpZloty = data.rates.GBP;
+            gbpZloty = (parseFloat(gbpZloty)*billSum).toFixed(2);
+
+            let gbpConvert = $('.poundConverter p').text(gbpZloty + " " + "GBP");
+
+             // Dollar
+            let usdZloty = data.rates.USD;
+            usdZloty = (parseFloat(usdZloty)*billSum).toFixed(2);
+
+            let usdConvert = $('.dollarConverter p').text(usdZloty + " " + "USD")
+
+            // Euro
+            let eurZloty = data.rates.EUR;
+            eurZloty = (parseFloat(eurZloty)*billSum).toFixed(2);
+
+            let eurConvert = $('.euroConverter p').text(eurZloty + " " + "EUR")
+
+            // Ruble
+            let rubZloty = data.rates.RUB;
+            rubZloty = (parseFloat(rubZloty)*billSum).toFixed(2);
+
+            let rubConvert = $('.rubleConverter p').text(rubZloty + " " + "RUB")
+            
+            // Cleaning 
+
+            $('.plnConverter p').text("")
+
+
+        })
+     }) 
+
     $('.dollar').on('click', function() {
+
+        if ($('.billSummary div').text()!='0') {
         
             $.ajax(currencyUSD).done(function(data) {
 
@@ -128,10 +172,13 @@ $( function() {
                 // Cleaning 
 
                 $('.dollarConverter p').text("")
-        })
+            })
+    }
     });
     
     $('.pln').on('click', function() {
+
+        if ($('.billSummary div').text()!='0') {
         
         $.ajax(currencyPLN).done(function(data) {
 
@@ -168,9 +215,13 @@ $( function() {
 
 
         })
+    }
     }) 
 
     $('.ruble').on('click', function() {
+
+        if ($('.billSummary div').text()!='0') {
+    
         
         $.ajax(currencyRUB).done(function(data) {
 
@@ -207,9 +258,12 @@ $( function() {
 
 
         })
+    }
     })
 
     $('.euro').on('click', function() {
+
+        if ($('.billSummary div').text()!='0') {
         
         $.ajax(currencyEUR).done(function(data) {
 
@@ -246,9 +300,13 @@ $( function() {
 
 
         })
+
+    }
     })
 
     $('.pound').on('click', function() {
+
+        if ($('.billSummary div').text()!='0') {
         
         $.ajax(currencyGBP).done(function(data) {
 
@@ -285,6 +343,8 @@ $( function() {
 
 
         })
+
+    }
     })
     
 
@@ -299,6 +359,7 @@ Currencies(currencySign);
 checkButton.addEventListener('click', function() {
     if (document.querySelector('#bill').value.length > 0 && document.querySelector('#people').value.length > 0) {
         CalculateTip();
+        
     }
 
 });

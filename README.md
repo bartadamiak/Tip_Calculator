@@ -1,3 +1,3 @@
 # Tip_Calculator
 
-in progress
+www.tipcalculator.pl
