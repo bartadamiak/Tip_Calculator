@@ -1,3 +1,1 @@
-# Tip_Calculator
-
-www.tipcalculator.pl
+http://bit.do/tip_calculator
